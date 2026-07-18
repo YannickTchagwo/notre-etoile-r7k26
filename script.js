@@ -14,8 +14,8 @@ const revealAnnouncement = () => {
   window.setTimeout(() => {
     entrance.classList.add('leaving');
     document.body.classList.remove('entrance-locked');
-  }, 1650);
-  window.setTimeout(() => entrance.remove(), 2450);
+  }, 2550);
+  window.setTimeout(() => entrance.remove(), 3350);
 };
 
 openAnnouncement.addEventListener('click', revealAnnouncement);
