@@ -4,15 +4,27 @@ document.querySelector('[data-scroll]').addEventListener('click', () => {
 
 const entrance = document.getElementById('entrance');
 const openAnnouncement = document.getElementById('open-announcement');
+const envelopeTrigger = document.getElementById('envelope-trigger');
 
-openAnnouncement.addEventListener('click', () => {
+const revealAnnouncement = () => {
+  if (entrance.classList.contains('opening')) return;
   entrance.classList.add('opening');
   openAnnouncement.disabled = true;
+  envelopeTrigger.setAttribute('aria-disabled', 'true');
   window.setTimeout(() => {
     entrance.classList.add('leaving');
     document.body.classList.remove('entrance-locked');
   }, 1650);
   window.setTimeout(() => entrance.remove(), 2450);
+};
+
+openAnnouncement.addEventListener('click', revealAnnouncement);
+envelopeTrigger.addEventListener('click', revealAnnouncement);
+envelopeTrigger.addEventListener('keydown', event => {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    revealAnnouncement();
+  }
 });
 
 const observer = new IntersectionObserver((entries) => {

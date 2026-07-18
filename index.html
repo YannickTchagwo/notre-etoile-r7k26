@@ -14,13 +14,14 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="modal.css">
   <link rel="stylesheet" href="entrance.css">
+  <link rel="stylesheet" href="entrance-fix.css">
 </head>
 <body class="entrance-locked">
   <section class="entrance" id="entrance" aria-labelledby="entrance-title">
     <div class="entrance-stars" aria-hidden="true"></div>
     <div class="entrance-content">
       <p class="entrance-kicker">Une invitation de la famille Tchagwo</p>
-      <div class="envelope-scene" aria-hidden="true">
+      <div class="envelope-scene" id="envelope-trigger" role="button" tabindex="0" aria-label="Ouvrir l’enveloppe">
         <div class="envelope">
           <div class="envelope-letter"><span>Ralph</span><small>notre nouvelle étoile</small></div>
           <div class="envelope-back"></div>
@@ -35,7 +36,7 @@
       <div class="entrance-message">
         <h1 id="entrance-title">Une merveilleuse nouvelle<br>vous attend…</h1>
         <p>Ouvrez cette invitation et entrez dans notre bonheur.</p>
-        <button class="entrance-button" id="open-announcement" type="button"><span>Ouvrir l’annonce</span><b>✦</b></button>
+        <button class="entrance-button" id="open-announcement" type="button"><span>Ouvrir l’enveloppe</span><b>✦</b></button>
       </div>
       <p class="entrance-whisper">Préparé avec amour</p>
     </div>
