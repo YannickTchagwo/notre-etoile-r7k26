@@ -2,6 +2,8 @@
 
 Site de naissance de la famille Tchagwo, prêt pour GitHub Pages.
 
+Le site s'ouvre avec un sas animé : une enveloppe scellée révèle le prénom Ralph avant d'afficher l'annonce.
+
 ## Personnalisation
 
 1. Remplacez les valeurs `XX.XX.XXXX`, `XX:XX`, `X,XX kg` et `XXX cm` dans `index.html`.

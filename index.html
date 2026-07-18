@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +10,39 @@
   <meta name="description" content="Une heureuse nouvelle de la famille Tchagwo.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="modal.css">
+  <link rel="stylesheet" href="entrance.css">
 </head>
-
-<body>
+<body class="entrance-locked">
+  <section class="entrance" id="entrance" aria-labelledby="entrance-title">
+    <div class="entrance-stars" aria-hidden="true"></div>
+    <div class="entrance-content">
+      <p class="entrance-kicker">Une invitation de la famille Tchagwo</p>
+      <div class="envelope-scene" aria-hidden="true">
+        <div class="envelope">
+          <div class="envelope-letter"><span>Ralph</span><small>notre nouvelle étoile</small></div>
+          <div class="envelope-back"></div>
+          <div class="envelope-paper"></div>
+          <div class="envelope-left"></div>
+          <div class="envelope-right"></div>
+          <div class="envelope-front"></div>
+          <div class="envelope-flap"></div>
+          <div class="wax-seal">T</div>
+        </div>
+      </div>
+      <div class="entrance-message">
+        <h1 id="entrance-title">Une merveilleuse nouvelle<br>vous attend…</h1>
+        <p>Ouvrez cette invitation et entrez dans notre bonheur.</p>
+        <button class="entrance-button" id="open-announcement" type="button"><span>Ouvrir l’annonce</span><b>✦</b></button>
+      </div>
+      <p class="entrance-whisper">Préparé avec amour</p>
+    </div>
+  </section>
   <div class="stars" aria-hidden="true"></div>
   <header class="hero">
-    <nav><span class="monogram">T</span><span>Famille Tchagwo Njokou</span></nav>
+    <nav><span class="monogram">T</span><span>Famille Tchagwo</span></nav>
     <div class="hero-copy reveal">
       <p class="eyebrow">L’une de nos plus belles rencontres</p>
       <h1>Une nouvelle étoile<br><em>est née</em></h1>
@@ -65,10 +86,9 @@
       <div class="letter-card observe">
         <p class="eyebrow dark">Quelques mots pour toi</p>
         <h2>Notre cher Ralph,</h2>
-        <p>Avant même de croiser ton regard, tu occupais déjà une place immense dans nos vies. Aujourd’hui, chacune de
-          tes respirations écrit le premier chapitre d’une aventure merveilleuse.</p>
+        <p>Avant même de croiser ton regard, tu occupais déjà une place immense dans nos vies. Aujourd’hui, chacune de tes respirations écrit le premier chapitre d’une aventure merveilleuse.</p>
         <p>Nous te promettons des bras où te réfugier, des rires à partager et tout l’amour dont un cœur peut rêver.</p>
-        <p class="signature">Avec tout notre amour,<br><strong>La famille Tchagwo Njokou</strong></p>
+        <p class="signature">Avec tout notre amour,<br><strong>La famille Tchagwo</strong></p>
       </div>
     </section>
 
@@ -83,7 +103,7 @@
       <h2>Merci de partager<br>notre bonheur</h2>
       <p>Votre affection rend ce moment encore plus précieux.</p>
       <button class="primary light" id="congrats" type="button">Envoyer vos félicitations ♡</button>
-      <small>Famille Tchagwo Njokou · <span id="year"></span></small>
+      <small>Famille Tchagwo · <span id="year"></span></small>
     </section>
   </main>
   <dialog id="whatsapp-dialog" class="whatsapp-dialog" aria-labelledby="dialog-title">
@@ -93,14 +113,11 @@
     <h2 id="dialog-title">À qui souhaitez-vous écrire ?</h2>
     <p>Votre message de félicitations sera préparé automatiquement dans WhatsApp.</p>
     <div class="recipient-grid">
-      <a class="recipient" data-recipient="maman" href="#"><span class="recipient-icon">♡</span><span><strong>À
-            maman</strong><small>Ouvrir WhatsApp</small></span><b>→</b></a>
-      <a class="recipient" data-recipient="papa" href="#"><span class="recipient-icon">✦</span><span><strong>À
-            papa</strong><small>Ouvrir WhatsApp</small></span><b>→</b></a>
+      <a class="recipient" data-recipient="maman" href="#"><span class="recipient-icon">♡</span><span><strong>À maman</strong><small>Ouvrir WhatsApp</small></span><b>→</b></a>
+      <a class="recipient" data-recipient="papa" href="#"><span class="recipient-icon">✦</span><span><strong>À papa</strong><small>Ouvrir WhatsApp</small></span><b>→</b></a>
     </div>
     <p class="dialog-note">Vous pourrez modifier le message avant de l’envoyer.</p>
   </dialog>
   <script src="script.js"></script>
 </body>
-
 </html>

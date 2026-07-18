@@ -2,6 +2,19 @@ document.querySelector('[data-scroll]').addEventListener('click', () => {
   document.getElementById('announcement').scrollIntoView({ behavior: 'smooth' });
 });
 
+const entrance = document.getElementById('entrance');
+const openAnnouncement = document.getElementById('open-announcement');
+
+openAnnouncement.addEventListener('click', () => {
+  entrance.classList.add('opening');
+  openAnnouncement.disabled = true;
+  window.setTimeout(() => {
+    entrance.classList.add('leaving');
+    document.body.classList.remove('entrance-locked');
+  }, 1650);
+  window.setTimeout(() => entrance.remove(), 2450);
+});
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
