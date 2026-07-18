@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="modal.css">
 </head>
 <body>
   <div class="stars" aria-hidden="true"></div>
@@ -76,10 +77,22 @@
       <span class="sparkle">✦</span>
       <h2>Merci de partager<br>notre bonheur</h2>
       <p>Votre affection rend ce moment encore plus précieux.</p>
-      <a class="primary light" id="congrats" href="#" aria-disabled="true">Envoyer vos félicitations ♡</a>
+      <button class="primary light" id="congrats" type="button">Envoyer vos félicitations ♡</button>
       <small>Famille Tchagwo · <span id="year"></span></small>
     </section>
   </main>
+  <dialog id="whatsapp-dialog" class="whatsapp-dialog" aria-labelledby="dialog-title">
+    <button class="dialog-close" type="button" aria-label="Fermer">×</button>
+    <span class="dialog-sparkle" aria-hidden="true">✦</span>
+    <p class="eyebrow dark">Partager votre joie</p>
+    <h2 id="dialog-title">À qui souhaitez-vous écrire ?</h2>
+    <p>Votre message de félicitations sera préparé automatiquement dans WhatsApp.</p>
+    <div class="recipient-grid">
+      <a class="recipient" data-recipient="maman" href="#"><span class="recipient-icon">♡</span><span><strong>À maman</strong><small>Ouvrir WhatsApp</small></span><b>→</b></a>
+      <a class="recipient" data-recipient="papa" href="#"><span class="recipient-icon">✦</span><span><strong>À papa</strong><small>Ouvrir WhatsApp</small></span><b>→</b></a>
+    </div>
+    <p class="dialog-note">Vous pourrez modifier le message avant de l’envoyer.</p>
+  </dialog>
   <script src="script.js"></script>
 </body>
 </html>

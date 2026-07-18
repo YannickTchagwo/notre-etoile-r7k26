@@ -14,6 +14,22 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.observe').forEach(element => observer.observe(element));
 document.getElementById('year').textContent = new Date().getFullYear();
 
+const whatsappDialog = document.getElementById('whatsapp-dialog');
+const whatsappMessage = 'Bonjour famille Tchagwo, toutes mes félicitations pour la naissance de Ralph ! Bienvenue à votre petite merveille ❤️';
+const whatsappNumbers = { papa: '491629835810', maman: '4917628051139' };
+
+document.getElementById('congrats').addEventListener('click', () => whatsappDialog.showModal());
+document.querySelector('.dialog-close').addEventListener('click', () => whatsappDialog.close());
+whatsappDialog.addEventListener('click', event => {
+  if (event.target === whatsappDialog) whatsappDialog.close();
+});
+
+document.querySelectorAll('[data-recipient]').forEach(link => {
+  link.href = `https://wa.me/${whatsappNumbers[link.dataset.recipient]}?text=${encodeURIComponent(whatsappMessage)}`;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+});
+
 // Après la naissance, renseignez la date au format AAAA-MM-JJ dans
 // l'attribut data-birth de la section .days pour activer le compteur.
 const daysSection = document.querySelector('.days');

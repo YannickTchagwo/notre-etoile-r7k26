@@ -9,7 +9,7 @@ Site de naissance de la famille Tchagwo, prêt pour GitHub Pages.
 3. Remplacez le bloc `<div class="photo-placeholder">…</div>` par :
    `<img class="photo-placeholder" src="assets/images/ralph.jpg" alt="Ralph">`
 4. Pour activer le compteur, ajoutez la date au format `AAAA-MM-JJ` dans `data-birth=""`.
-5. Pour le bouton WhatsApp, remplacez `href="#"` par un lien `https://wa.me/...` et supprimez `aria-disabled="true"`.
+5. Le bouton WhatsApp propose déjà d'écrire à maman ou à papa. Les numéros et le message se trouvent dans `script.js`.
 
 ## Publication
 
