@@ -3,6 +3,7 @@
 .envelope-scene:focus-visible .envelope{outline:2px solid #d6b276;outline-offset:9px}
 .envelope{transition:transform .25s ease}
 .envelope-scene:hover .envelope{transform:translateY(0) scale(1.015)}
+.entrance-message{margin-top:clamp(46px,7vh,76px)}
 .envelope-back{z-index:0}
 .envelope-paper{z-index:1}
 .envelope-letter{z-index:2;transition:none}
@@ -13,3 +14,4 @@
 .entrance.opening .envelope-letter{animation:letter-reveal 1s cubic-bezier(.2,.7,.2,1) .55s forwards}
 @keyframes letter-reveal{0%{z-index:2;transform:none}1%,100%{z-index:7}100%{transform:translateY(-58%) scale(1.08)}}
 @media(prefers-reduced-motion:reduce){.entrance.opening .envelope-letter{animation:none;z-index:7}}
+@media(max-height:760px){.entrance-content{padding-top:14px;padding-bottom:14px}.entrance-kicker{margin-bottom:10px}.envelope-scene{height:230px}.entrance-message{margin-top:58px}.entrance-message h1{font-size:clamp(27px,4.4vw,40px)}.entrance-message>p{margin-bottom:18px}.entrance-whisper{margin-top:14px}}
