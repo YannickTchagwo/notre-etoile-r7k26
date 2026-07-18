@@ -6,16 +6,43 @@ const entrance = document.getElementById('entrance');
 const openAnnouncement = document.getElementById('open-announcement');
 const envelopeTrigger = document.getElementById('envelope-trigger');
 
-const revealAnnouncement = () => {
+const wait = milliseconds => new Promise(resolve => window.setTimeout(resolve, milliseconds));
+const waitForMotion = (element, eventName, maximumDuration, propertyName) => new Promise(resolve => {
+  let finished = false;
+  const complete = () => {
+    if (finished) return;
+    finished = true;
+    element.removeEventListener(eventName, onEnd);
+    resolve();
+  };
+  const onEnd = event => {
+    if (event.target !== element) return;
+    if (propertyName && event.propertyName !== propertyName) return;
+    complete();
+  };
+  element.addEventListener(eventName, onEnd);
+  window.setTimeout(complete, maximumDuration);
+});
+
+const revealAnnouncement = async () => {
   if (entrance.classList.contains('opening')) return;
-  entrance.classList.add('opening');
   openAnnouncement.disabled = true;
   envelopeTrigger.setAttribute('aria-disabled', 'true');
-  window.setTimeout(() => {
-    entrance.classList.add('leaving');
-    document.body.classList.remove('entrance-locked');
-  }, 2550);
-  window.setTimeout(() => entrance.remove(), 3350);
+
+  const flap = entrance.querySelector('.envelope-flap');
+  const letter = entrance.querySelector('.envelope-letter');
+
+  entrance.classList.add('opening');
+  await waitForMotion(flap, 'transitionend', 950, 'transform');
+
+  entrance.classList.add('card-revealed');
+  await waitForMotion(letter, 'animationend', 1200);
+
+  await wait(650);
+  entrance.classList.add('leaving');
+  document.body.classList.remove('entrance-locked');
+  await wait(800);
+  entrance.remove();
 };
 
 openAnnouncement.addEventListener('click', revealAnnouncement);

@@ -11,7 +11,8 @@
 .envelope-front{z-index:4}
 .envelope-flap{z-index:5}
 .wax-seal{z-index:6}
-.entrance.opening .envelope-letter{animation:letter-reveal 1.05s cubic-bezier(.22,.72,.18,1) .92s forwards}
+.entrance.opening:not(.card-revealed) .envelope-letter{z-index:2;transform:none;animation:none}
+.entrance.opening.card-revealed .envelope-letter{animation:letter-reveal 1.05s cubic-bezier(.22,.72,.18,1) forwards}
 @keyframes letter-reveal{0%{z-index:2;transform:translateY(0) scale(1)}1%{z-index:7;transform:translateY(0) scale(1)}72%{z-index:7;transform:translateY(-63%) scale(1.04)}100%{z-index:7;transform:translateY(-58%) scale(1.08)}}
-@media(prefers-reduced-motion:reduce){.entrance.opening .envelope-letter{animation:none;z-index:7}}
+@media(prefers-reduced-motion:reduce){.entrance.opening.card-revealed .envelope-letter{animation:letter-reveal-reduced .01s linear forwards}@keyframes letter-reveal-reduced{to{z-index:7;transform:translateY(-58%) scale(1.08)}}}
 @media(max-height:760px){.entrance-content{padding-top:14px;padding-bottom:14px}.entrance-kicker{margin-bottom:10px}.envelope-scene{height:230px}.entrance-message{margin-top:58px}.entrance-message h1{font-size:clamp(27px,4.4vw,40px)}.entrance-message>p{margin-bottom:18px}.entrance-whisper{margin-top:14px}}
