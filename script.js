@@ -82,6 +82,12 @@ document.querySelectorAll('[data-recipient]').forEach(link => {
   link.rel = 'noopener noreferrer';
 });
 
+document.querySelectorAll('[data-protected-photo]').forEach(photo => {
+  photo.addEventListener('contextmenu', event => event.preventDefault());
+  photo.addEventListener('dragstart', event => event.preventDefault());
+  photo.addEventListener('click', event => event.preventDefault());
+});
+
 // Après la naissance, renseignez la date au format AAAA-MM-JJ dans
 // l'attribut data-birth de la section .days pour activer le compteur.
 const daysSection = document.querySelector('.days');
