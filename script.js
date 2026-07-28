@@ -67,7 +67,7 @@ document.querySelectorAll('.observe').forEach(element => observer.observe(elemen
 document.getElementById('year').textContent = new Date().getFullYear();
 
 const whatsappDialog = document.getElementById('whatsapp-dialog');
-const whatsappMessage = 'Bonjour famille Tchagwo, toutes mes félicitations pour la naissance de Ralph ! Bienvenue à votre petite merveille ❤️';
+const whatsappMessage = '';
 const whatsappNumbers = { papa: '491629835810', maman: '4917628051139' };
 
 document.getElementById('congrats').addEventListener('click', () => whatsappDialog.showModal());
