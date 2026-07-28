@@ -9,3 +9,15 @@
 .orbit-photo .photo-shield{position:absolute;inset:0;width:auto;height:auto;right:0;bottom:0;z-index:3;border-radius:0;background:transparent;box-shadow:none;pointer-events:auto}
 @keyframes celestial-breathe{0%,100%{box-shadow:0 0 0 9px #d8bf8810,0 0 38px #d8bf882b,0 18px 45px #0006}50%{box-shadow:0 0 0 13px #d8bf8818,0 0 58px #d8bf8845,0 18px 45px #0006}}
 @media(prefers-reduced-motion:reduce){.orbit-photo{animation:none}}
+@media(max-width:760px){
+  .hero{min-height:auto;padding:28px 24px 90px;display:flex;flex-direction:column;align-items:stretch}
+  .hero nav{position:static;order:1;align-self:flex-start}
+  .orbit{position:relative;order:2;top:auto;right:auto;align-self:center;width:min(82vw,360px);margin:58px auto 54px;transform:none}
+  .hero-copy{order:3;width:100%}
+  .hero h1{font-size:clamp(54px,15vw,78px)}
+  .hero .eyebrow{line-height:1.7}
+  .hero .intro{margin-top:28px}
+}
+@media(max-width:420px){
+  .orbit{width:min(86vw,330px);margin-top:50px;margin-bottom:46px}
+}
