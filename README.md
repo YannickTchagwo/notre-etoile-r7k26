@@ -3,6 +3,7 @@
 Site de naissance de la famille Tchagwo, prêt pour GitHub Pages.
 
 Le site s'ouvre avec un sas animé : une enveloppe scellée révèle le prénom Ralph avant d'afficher l'annonce.
+La photo de Ralph apparaît également dans un médaillon circulaire au centre des orbites de la page d'accueil.
 
 ## Personnalisation
 

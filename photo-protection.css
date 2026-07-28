@@ -3,3 +3,9 @@
 .photo-shield{position:absolute;inset:0;z-index:2;background:transparent;pointer-events:auto}
 .photo-protected::after{content:"Famille Tchagwo";position:absolute;right:14px;bottom:12px;z-index:3;color:#fff9;font:500 9px "DM Sans",sans-serif;letter-spacing:.16em;text-transform:uppercase;text-shadow:0 1px 5px #0008;pointer-events:none}
 @media(max-width:760px){.photo-protected::after{right:10px;bottom:9px;font-size:8px}}
+.orbit-photo{position:absolute;inset:25%;z-index:2;overflow:hidden;border:1px solid #d4ba82;border-radius:50%;background:#102941;box-shadow:0 0 0 9px #d8bf8810,0 0 42px #d8bf8835,0 18px 45px #0006;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;animation:celestial-breathe 5s ease-in-out infinite}
+.orbit-photo::before{content:"";position:absolute;inset:0;z-index:2;border-radius:inherit;box-shadow:inset 0 0 24px #06152388;pointer-events:none}
+.orbit-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 25%;pointer-events:none;-webkit-user-drag:none;user-drag:none;transform:scale(1.03)}
+.orbit-photo .photo-shield{position:absolute;inset:0;width:auto;height:auto;right:0;bottom:0;z-index:3;border-radius:0;background:transparent;box-shadow:none;pointer-events:auto}
+@keyframes celestial-breathe{0%,100%{box-shadow:0 0 0 9px #d8bf8810,0 0 38px #d8bf882b,0 18px 45px #0006}50%{box-shadow:0 0 0 13px #d8bf8818,0 0 58px #d8bf8845,0 18px 45px #0006}}
+@media(prefers-reduced-motion:reduce){.orbit-photo{animation:none}}
